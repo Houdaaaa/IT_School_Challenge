@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>QCM</title>
+    <h1>IT School Challenge </h1>
+  </head>
+  <body>
+    <form method="post" action= <?php echo("ctrl_question.php?id=".$question["ID_question"]."&language=".$language) ?>>
+        <p>
+        <?php echo($question['question']) ?> <br/>
+        <?php
+            foreach($answers as $answer)
+            {
+                $id = $answer['ID'];
+                echo("
+                    <label><input type='checkbox' name='answer[]' value='$id'/> ". $answer['answer']." </label><br />
+                ");
+            }
+        ?>
+        </p>      
+        <input type="submit" name='validation' value="Valider" />
+        <input onclick="myFunction()" type="button" name='hint' value="indice" />  <!-- régler checkbox empêcher cette page d'ouvrir autre dialogue-->
+    </form>  
+    <br/>
+    <script>
+      var hint = '<?php echo $hint; ?>' ;
+      function myFunction() {
+        alert(hint);
+      }
+    </script>
+  </body>
+</html>

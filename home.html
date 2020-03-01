@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>QCM</title>
+    <h1>IT School Challenge </h1>
+    <h2>Bienvenue ! </h2>
+  </head>
+  <body>
+    <form method="post" action="ctrl.php">
+        <label for="pet-select">Choose a language</label>
+        <select name="languages" id="languages-select">
+            <option value="">--Please choose an option--</option>
+            <?php 
+                foreach($languages as $language)
+                {
+                    echo("<option value=".$language['language'].">".$language['language']."</option>");
+                }
+            ?>
+        </select>
+        <br/> <br/>
+        
+        <input type="submit" name='next' value="go" /> 
+    </form>
+
+  </body>
+</html>

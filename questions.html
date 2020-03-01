@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>QCM</title>
+    <h1>IT School Challenge </h1>
+  </head>
+  <body>
+    <!--Ou form? -->
+    <?php                                       
+        foreach($questions as $question)
+        {   
+          echo("<a href='ctrl.php?id=".$question["ID"]."&language=".$language."' name='question' value=".$question['question']." > ".$question['question']." <br/> </a>");
+        } 
+    ?>   
+   
+  </body>
+</html>
+
+  <!--<input type="submit" name='valid' value=".$question['question']." />   -->
